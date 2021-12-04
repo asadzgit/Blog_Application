@@ -1,0 +1,44 @@
+﻿<!--View for Admin Home-->
+
+@using BlogApplication.Models
+@model List<User>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Home";
+}
+
+<br />
+<br />
+<br />
+<a class="btn btn-primary m-4" asp-action="AddUser">Add User</a>
+<br />
+<br />
+<table class="table table-hover table-dark table-striped">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (User u in Model)
+         {
+
+            <tr>
+                <td>   @u.Username       </td>
+                <td>   @u.Email      </td>
+                <td>   @u.Password       </td>
+                <td>
+                    <a class="btn btn-warning" asp-action="EditUser" asp-route-id="@u.Id">Edit</a>
+                    <a class="btn btn-danger" asp-action="DeleteUser" asp-route-id="@u.Id">Delete</a>
+                </td>
+            </tr>
+
+         }
+
+
+    </tbody>
+</table>

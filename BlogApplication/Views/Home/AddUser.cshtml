@@ -1,0 +1,44 @@
+﻿<!--View for adding a  user for admin-->
+
+@using BlogApplication.Models
+@model User
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Add user";
+}
+<form method="post" action="/Home/AddUser" class="container bg-white border">
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <p class="display-4">Add User</p>
+    <hr />
+    <div>
+        <label class="form-label" asp-for="Username">Username<span class="text-danger">*</span></label><br>
+        <input class="form-control" asp-for="Username">
+        <span class="text-danger" asp-validation-for="Username"></span>
+    </div>
+    <br />
+    <div>
+        <label class="form-label" asp-for="Email">Email<span class="text-danger">*</span></label><br>
+        <input class="form-control" asp-for="Email">
+        <span class="text-danger" asp-validation-for="Email"></span>
+    </div>
+    <br />
+    <div>
+        <label class="form-label" asp-for="Password">Password<span class="text-danger">*</span></label><br>
+        <input id="password" type="password" class="form-control" asp-for="Password">
+        <span class="text-danger" asp-validation-for="Password"></span><br />
+    </div>
+    <br />
+    <br />
+    <div>
+        <input class="btn border-primary pt-1" type="submit" value="Add" />
+    </div>
+    <br />
+</form>
+<br />
+<br />
+<br />
+<br />

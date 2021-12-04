@@ -1,0 +1,43 @@
+﻿<!--View for viewing the post in detail for  user-->
+@using BlogApplication.Models
+@model Post 
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = @Model.Title;
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="container">
+    <div class="row p-2 border bg-white m-0 mb-3">
+        <img class="col-lg-2 col-sm-3 col-4 rounded-circle img-fixed transbl" src=@Model.UserImage />
+        <div class="col-lg-10 col-sm-9 col-8 pl-0">
+            <p class="d-inline mr-2 text-primary">@Model.Username</p>
+            <p class="d-inline">@Model.Date</p>
+            <hr />
+            <!--to display any error message-->
+            @if (Model.permissiion)
+            {
+                <div class="pt-2 pb-2">
+                    <a asp-action="UpdatePost" asp-route-id="@Model.Id" class="btn btn-secondary">Update</a>
+                    <a asp-action="DeletePost" asp-route-id="@Model.Id" class="btn btn-danger">Delete</a>
+                </div>
+            }
+            <div class="line"></div>
+            <div class="transbl">
+                <p class="display-4">@Model.Title</p>
+                <p class="text-justify">@Model.Content</p>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

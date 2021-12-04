@@ -1,0 +1,46 @@
+﻿<!--View for User Home-->
+@using BlogApplication.Models
+@model List<Post>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Home";
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="container">
+    <a class="btn btn-primary pt-1" asp-action="CreatePost">Create Post</a><br /><br />
+    @if (Model != null)
+     {
+        @foreach (Post post in Model)
+         {
+            <div class="row bg-white p-4 border m-0 mt-3 mb-3 trans bg-light">
+                <img class="col-lg-3 col-md-6 col-12 mb-md-0 mb-3 rounded-circle img-height" src=@post.UserImage />
+                <div class="col-lg-9 col-md-6 col-12">
+                    <div class="row m-0">
+                        <div class="col-12 p-0">
+                            <p class="d-inline mr-2 text-primary">@post.Username</p>
+                            <p class="d-inline">@post.Date.ToString()</p>
+                            <hr />
+                            <div class="line"></div>
+                            <a class="text-decoration-none text-dark" asp-action="PostDetails" asp-route-id="@post.Id">
+                                <p class="display-4">@post.Title</p>
+                            </a>
+                                <p class="text-justify">@post.Content</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         }
+     }
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

@@ -1,0 +1,50 @@
+﻿<!--View for updating a post for user-->
+@using BlogApplication.Models
+@model UpdatePost
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Update " + @Model.Title;
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<form method="post" action="/Home/UpdatePost" class="container bg-white border form-style">
+    <p class="display-4">Update Your Post</p>
+    <hr />
+    <div class="line"></div>
+    <p class="text-danger">
+        <!--to display any error message-->
+        @if (Model != null)
+        {@Model.Error}
+    </p>
+    <div class="form-group">
+        <label asp-for="Title">
+            Title<span class="text-danger">*</span>
+        </label>
+        <input class="form-control" asp-for="Title" />
+        <span class="text-danger" asp-validation-for="Title"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Content">
+            Content<span class="text-danger">*</span>
+        </label>
+        <textarea class="form-control" asp-for="Content" rows="8"></textarea>
+        <span class="text-danger" asp-validation-for="Content"></span>
+    </div>
+    <input asp-for="Id" type="hidden">
+    <button type="submit" class="btn border-primary">Post</button>
+    <br />
+    <br />
+</form>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

@@ -1,0 +1,66 @@
+﻿<!--View for Signup for user-->
+@using BlogApplication.Models
+@model Signup
+@{
+    Layout = "~/Views/Shared/_LoginSignupLayout.cshtml";
+    ViewData["Title"] = "Signup";
+}
+<br />
+<br />
+<form method="post" action="/Home/Signup" enctype="multipart/form-data" class="container border bg-white form-style">
+    <br />
+    <p class="display-4">Signup</p>
+    <hr />
+    <div class="line"></div>
+    <p class="text-danger">
+        <!--to display any error message-->
+        @if (Model != null)
+        {@Model.Error}
+    </p>
+    <div class="form-group">
+        <label asp-for="Username">
+            Username<span class="text-danger">*</span>
+        </label>
+        <input class="form-control" asp-for="Username" />
+        <span class="text-danger" `asp-validation-for="Username"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email">
+            Email<span class="text-danger">*</span>
+        </label>
+        <input class="form-control" asp-for="Email" />
+        <span class="text-danger" asp-validation-for="Email"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password">
+            Password<span class="text-danger">*</span>
+        </label>
+        <input class="form-control" asp-for="Password" />
+        <span class="text-danger" asp-validation-for="Password"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password">
+            Confirm Password<span class="text-danger">*</span>
+        </label>
+        <input class="form-control" asp-for="ConfirmPassword" />
+        <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Photo">Image<span class="text-danger">*</span></label>
+
+        <input asp-for="Photo" />
+
+
+        <span asp-validation-for="Photo" class="text-danger"></span>
+        <span class="text-danger">
+            <!--to display any error message-->
+            @if (Model != null)
+            {@Model.ExtErr}
+        </span>
+    </div>
+    <div class="d-flex justify-content-between align-items-end">
+        <button type="submit" class="btn btn-primary">Signup</button>
+    </div>
+    <br />
+    <br />
+</form>

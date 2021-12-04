@@ -1,0 +1,56 @@
+﻿<!--             Layout for user's tasks Views        -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
+    <title>@ViewData["Title"] Blog Application</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <script src="~/js/site.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-light">
+    <header>
+        <nav class="navbar bg-dark navbar-expand-lg fixed-top" style="font-size: large; position:fixed;">
+            <div class="container-fluid">
+                <div class="navbar-header text-white">
+                    <h4 class="navbar-brand" href="#">Blog Application</h4>
+                </div>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class=" text-white ml-4" asp-action="UserHome"><span class="glyphicon glyphicon"></span>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class=" text-white ml-4" asp-action="About"><span class="glyphicon glyphicon"></span>About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class=" text-white ml-4" asp-action="Profile"><span class="glyphicon glyphicon"></span>Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class=" text-white ml-4" asp-action="Logout"><span class="glyphicon glyphicon"></span> Log out</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <div>
+        <main role="main" class="pb-1">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="border-top footer text-muted" style="bottom:0px; height:50px">
+        <div class="container">
+            &copy; Blog Apllication
+        </div>
+    </footer>
+</body>
+</html>
