@@ -11,12 +11,13 @@ username = admin
 password = admin
 
 (2)
-(a)--Create the following two tables in your local SQL server databse. just paste the following scripts
-(b)--Copy the connection string of your databse (in which you have mad these tables) in the "connectionstring" variable in "CRUDUser" and "CRUDPost" files in Model folder.
+(a) Create the following two tables in your local SQL server databse. just paste the following scripts
+(b)Copy the connection string of your databse (in which you have mad these tables) in the "connectionstring" variable in "CRUDUser" and "CRUDPost" files in Model folder.
 ------------------------------------------------------------------------
 Script for 1st table:
 ------------------------------------------------------------------------
 CREATE TABLE [dbo].[posts] (
+
     [Blogid]      INT          IDENTITY (1, 1) NOT NULL,
     [userid]      INT          NOT NULL,
     [username]    NCHAR (50)   NOT NULL,
@@ -25,17 +26,20 @@ CREATE TABLE [dbo].[posts] (
     [curdatetime] NCHAR(50)     NOT NULL,
     [userimage]   NCHAR (200)  NOT NULL,
     PRIMARY KEY CLUSTERED ([Blogid] ASC)
+
 );
 
 ------------------------------------------------------------------------
 Script for 2nd table:
 ------------------------------------------------------------------------
 CREATE TABLE [dbo].[users] (
+
     [userid]   INT         IDENTITY (1, 1) NOT NULL,
     [username] NCHAR (50)  NOT NULL,
     [password] NCHAR (20)  NOT NULL,
     [email]    NCHAR (50)  NOT NULL,
     [photo]    NCHAR (200) NOT NULL,
     PRIMARY KEY CLUSTERED ([userid] ASC)
+
 );
 
