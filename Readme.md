@@ -11,8 +11,8 @@ username = admin
 password = admin
 
 (2)
-(a) Create the following two tables in your local SQL server databse. just paste the following scripts
-(b)Copy the connection string of your databse (in which you have mad these tables) in the "connectionstring" variable in "CRUDUser" and "CRUDPost" files in Model folder.
+* Create the following two tables in your local SQL server databse. just paste the following scripts
+* Copy the connection string of your databse (in which you have mad these tables) in the "connectionstring" variable in "CRUDUser" and "CRUDPost" files in Model folder.
 ------------------------------------------------------------------------
 Script for 1st table:
 ------------------------------------------------------------------------
